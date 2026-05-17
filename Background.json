@@ -1,0 +1,7 @@
+chrome.action.onClicked.addListener(function(tab) {
+  if (tab.id) {
+    chrome.tabs.sendMessage(tab.id, { action: 'toggleWidget' }).catch(err => {
+      console.log("Không thể gửi message tới tab này (Trang hệ thống hoặc chưa load xong):", err.message);
+    });
+  }
+});

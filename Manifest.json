@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Cat Bell Beta",
+  "version": "1.5",
+  "description": "Tự động vượt Uptolink 2 Step & 3 Step - @catdzs1tg",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "icons": { "48": "icon.png" },
+  "action": {
+    "default_icon": { "48": "icon.png" },
+    "default_title": "Cat Bell Beta"
+  }
+}
